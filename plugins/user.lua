@@ -9,4 +9,12 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "vimwiki/vimwiki",
+    event = "VeryLazy",
+  },
+  {
+    "instant-markdown/vim-instant-markdown",
+    event = "VeryLazy",
+  },
 }
