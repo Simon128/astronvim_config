@@ -28,4 +28,50 @@ maps.n["<leader>bD"] = {
   desc = "Pick to close",
 }
 maps.n["<leader>b"] = { name = "Buffers" }
+
+-- harpoon mappings
+maps.n["<A-1>"] = {
+  function() require("harpoon.mark").set_current_at(1) end,
+  desc = "Harpoon: Set mark for current buffer/file on idx 1",
+}
+maps.n["<A-2>"] = {
+  function() require("harpoon.mark").set_current_at(2) end,
+  desc = "Harpoon: Set mark for current buffer/file on idx 2",
+}
+maps.n["<A-3>"] = {
+  function() require("harpoon.mark").set_current_at(3) end,
+  desc = "Harpoon: Set mark for current buffer/file on idx 3",
+}
+maps.n["<A-4>"] = {
+  function() require("harpoon.mark").set_current_at(4) end,
+  desc = "Harpoon: Set mark for current buffer/file on idx 4",
+}
+maps.n["<A-5>"] = {
+  function() require("harpoon.mark").set_current_at(5) end,
+  desc = "Harpoon: Set mark for current buffer/file on idx 5",
+}
+maps.n["1"] = {
+  function() require("harpoon.ui").nav_file(1) end,
+  desc = "Harpoon: Jump to mark on idx 1",
+}
+maps.n["2"] = {
+  function() require("harpoon.ui").nav_file(2) end,
+  desc = "Harpoon: Jump to mark on idx 2",
+}
+maps.n["3"] = {
+  function() require("harpoon.ui").nav_file(3) end,
+  desc = "Harpoon: Jump to mark on idx 3",
+}
+maps.n["4"] = {
+  function() require("harpoon.ui").nav_file(4) end,
+  desc = "Harpoon: Jump to mark on idx 4",
+}
+maps.n["5"] = {
+  function() require("harpoon.ui").nav_file(5) end,
+  desc = "Harpoon: Jump to mark on idx 5",
+}
+maps.n["<A-0>"] = {
+  function() require("harpoon.ui").toggle_quick_menu() end,
+  desc = "Harpoon: Toggle Quick-Menu",
+}
 return maps
