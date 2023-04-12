@@ -10,12 +10,19 @@ local maps = { i = {}, n = {}, v = {}, t = {} }
 
 if is_available "nvim-dap" then
   local launch_debug = function()
+    -- Automatically use launch.json if it exist
     local json_path = vim.fn.getcwd() .. "/launch.json"
     if vim.fn.filereadable(json_path) then require("dap.ext.vscode").load_launchjs(json_path) end
+    -- Python Anaconda support (use currently active environment)
+    if vim.fn.environ()["CONDA_PREFIX"] ~= nil then
+      for _, conf in ipairs(require("dap").configurations.python) do
+        conf.python = vim.fn.environ()["CONDA_PREFIX"] .. "/bin/python"
+      end
+    end
+    -- Start debug
     require("dap").continue()
   end
   maps.n["<F5>"] = { launch_debug, desc = "Debugger: Start" }
-  maps.n["<leader>dl"] = { launch_debug, desc = "Start/Continue from launch.json" }
 end
 
 maps.n["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" }
