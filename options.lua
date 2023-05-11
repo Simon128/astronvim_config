@@ -16,22 +16,6 @@ return {
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    vimwiki_list = {
-      {
-        path = "~/wikis/personal",
-        auto_diary_index = 1,
-        template_path = "~/.config/nvim/lua/user",
-        template_default = "vimwiki",
-        template_ext = ".html",
-      },
-      {
-        path = "~/wikis/work",
-        auto_diary_index = 2,
-        template_path = "~/.config/nvim/lua/user",
-        template_default = "vimwiki",
-        template_ext = ".html",
-      },
-    },
   },
 }
 -- If you need more control, you can use the function()...end notation

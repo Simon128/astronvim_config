@@ -16,7 +16,7 @@ if is_available "nvim-dap" then
     -- Python Anaconda support (use currently active environment)
     if vim.fn.environ()["CONDA_PREFIX"] ~= nil then
       for _, conf in ipairs(require("dap").configurations.python) do
-        conf.python = vim.fn.environ()["CONDA_PREFIX"] .. "/bin/python"
+        conf.pythonPath = vim.fn.environ()["CONDA_PREFIX"] .. "/bin/python"
       end
     end
     -- Start debug

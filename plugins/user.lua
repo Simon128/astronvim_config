@@ -10,14 +10,6 @@ return {
   --   end,
   -- },
   {
-    "vimwiki/vimwiki",
-    event = "VeryLazy",
-  },
-  {
-    "instant-markdown/vim-instant-markdown",
-    event = "VeryLazy",
-  },
-  {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
