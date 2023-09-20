@@ -6,6 +6,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = { "lua_ls", "rust_analyzer", "jedi_language_server" },
+      automatic_installation = true,
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
@@ -14,6 +15,7 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       ensure_installed = { "prettier", "stylua" },
+      automatic_installation = true,
     },
   },
   {
@@ -21,6 +23,7 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       ensure_installed = { "python", "rust" },
+      automatic_installation = true,
     },
   },
 }

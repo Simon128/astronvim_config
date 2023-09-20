@@ -16,6 +16,7 @@ if is_available "nvim-dap" then
     -- Python Anaconda support (use currently active environment)
     if vim.fn.environ()["CONDA_PREFIX"] ~= nil then
       for _, conf in ipairs(require("dap").configurations.python) do
+        print(vim.fn.environ()["CONDA_PREFIX"])
         conf.pythonPath = vim.fn.environ()["CONDA_PREFIX"] .. "/bin/python"
       end
     end
@@ -81,16 +82,14 @@ maps.n["<A-0>"] = {
   function() require("harpoon.ui").toggle_quick_menu() end,
   desc = "Harpoon: Toggle Quick-Menu",
 }
-maps.i["#<"] = {
-  "\\left<",
-}
-maps.i["#r"] = {
-  "\\right|",
-}
-maps.i["#l"] = {
-  "\\left|",
-}
-maps.i["#>"] = {
-  "\\right>",
+maps.n["<leader>m"] = {
+  function()
+    local peek = require "peek"
+    if peek.is_open() then
+      peek.close()
+    else
+      peek.open()
+    end
+  end,
 }
 return maps
